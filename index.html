@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Tic Tac Toe</title>
-      <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div>  
-            <h1>Tic Tac Toe</h1> 
-        </div>
-      <div id="board"></div>
-      <footer>© 2023 <a href="https://potroclo.com/">JA Solutions</a>. All rights reserved.</footer>
-      <script src="script.js"></script>
-    </body>
-    </html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe | Juego Moderno</title>
+  <meta name="description" content="Juego clásico de Tic Tac Toe con diseño moderno y animaciones">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="game-container">
+    <!-- Header -->
+    <header class="game-header">
+      <h1>Tic Tac Toe</h1>
+      <p class="subtitle">El clásico gato</p>
+    </header>
+
+    <!-- Turn Indicator -->
+    <div class="turn-indicator">
+      <span class="turn-label">Turno de</span>
+      <span id="current-player" class="current-player player-x">X</span>
+    </div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-card score-x">
+        <span class="score-label">X</span>
+        <span id="score-x" class="score-value">0</span>
+      </div>
+      <div class="score-card score-draw">
+        <span class="score-label">Empates</span>
+        <span id="score-draw" class="score-value">0</span>
+      </div>
+      <div class="score-card score-o">
+        <span class="score-label">O</span>
+        <span id="score-o" class="score-value">0</span>
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div id="board" class="board" role="grid" aria-label="Tablero de Tic Tac Toe"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="reset-btn" class="btn btn-reset" aria-label="Nueva partida">
+        Nueva Partida
+      </button>
+      <button id="reset-scores-btn" class="btn btn-secondary" aria-label="Reiniciar puntuación">
+        Reiniciar Puntuación
+      </button>
+    </div>
+  </div>
+
+  <!-- Win Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div id="modal-icon" class="modal-icon">🎉</div>
+      <h2 id="modal-title" class="modal-title">¡Ganador!</h2>
+      <p id="modal-message" class="modal-message">El jugador X ha ganado</p>
+      <button id="modal-btn" class="btn btn-play-again">Jugar de Nuevo</button>
+    </div>
+  </div>
+
+  <!-- Confetti Container -->
+  <div id="confetti" class="confetti-container"></div>
+
+  <footer>
+    © 2024 <a href="https://portafolio.nersquad.com/" target="_blank" rel="noopener">NerSquad</a>. Todos los derechos
+    reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
